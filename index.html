@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы о продуктах</title>
+    <script async src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #addReviewForm,
+        #viewReviews {
+            display: none;
+        }
+
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .review-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .delete-btn {
+            cursor: pointer;
+            color: red;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="addReviewForm">
+        <h2>Оставить отзыв</h2>
+        <form id="reviewForm">
+            <label for="productName">Название продукта:</label>
+            <input type="text" id="productName" required>
+            <br>
+            <label for="reviewText">Отзыв:</label>
+            <textarea id="reviewText" required></textarea>
+            <br>
+            <button type="button" onclick="addReview()">Добавить отзыв</button>
+        </form>
+    </div>
+
+    <div id="viewReviews">
+        <h2>Просмотр отзывов</h2>
+        <ul id="productList" class="product-list"></ul>
+        <ul id="reviewList" class="review-list"></ul>
+    </div>
+
+    <button
+        onclick="document.getElementById('addReviewForm').style.display='block'; document.getElementById('viewReviews').style.display='none';">Перейти
+        к добавлению отзыва</button>
+    <button
+        onclick="document.getElementById('addReviewForm').style.display='none'; document.getElementById('viewReviews').style.display='block'; showReviews();">Перейти
+        к просмотру отзывов</button>
+
+</body>
+
+</html>
