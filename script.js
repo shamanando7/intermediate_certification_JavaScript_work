@@ -16,6 +16,8 @@ function addReview() {
     document.getElementById('productName').value = '';
     document.getElementById('reviewText').value = '';
 
+    showReviews(); // Обновляем список после добавления
+
     alert('Отзыв успешно добавлен.');
 }
 
